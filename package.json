@@ -1,6 +1,6 @@
 {
   "name": "unhell",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "helps removing callback hells, with simple undertandable code",
   "main": "index.js",
   "scripts": {
