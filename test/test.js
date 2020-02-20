@@ -1,14 +1,4 @@
-# unhell
-this is the package to save coders from callback hell. 
-
-## Understanding
-
-This is the simple solution without using promise or modularization techniques. Simple to write and easy to understand and implement
-
-## Example
-
-```
-let unhell = require("unhell")
+let unhell = require("../lib/index")
 
 function name(params, next) {
     setTimeout(() => {
@@ -52,5 +42,3 @@ function respHandler(params){
 }
 
 unhell.use({value:10}, name, checkName, check2Name, check3Name, respHandler)
-
-```

@@ -1,0 +1,16 @@
+{
+  "name": "unhell",
+  "version": "1.0.1",
+  "description": "helps removing callback hells, with simple undertandable code",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "keywords": ["nocallback", "no callback", "unhell", "callback hell"],
+  "author":  "mohit gupta",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guptamohit385/no-cb-hell.git"
+  }
+}
