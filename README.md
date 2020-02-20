@@ -10,6 +10,9 @@ This is the simple solution without using promise or modularization techniques. 
 ```
 let unhell = require("unhell")
 
+/*
+ * any function which has blocking code
+ */
 function name(params, next) {
     setTimeout(() => {
         console.log("name", params)
@@ -18,6 +21,9 @@ function name(params, next) {
     }, 3000)
 }
 
+/*
+ * any function which has blocking code
+ */
 function checkName(params, next) {
     setTimeout(() => {
         console.log("checkName", params)
@@ -26,22 +32,10 @@ function checkName(params, next) {
     }, 600)
 }
 
-function check2Name(params, next) {
-    setTimeout(() => {
-        console.log("check2Name", params)
-        params.age = 100;
-        return next(null, "succes2")
-    }, 800)
-}
-
-function check3Name(params, next) {
-    setTimeout(() => {
-        console.log("check3Name", params)
-        params.work = "harder";
-        return next(null, "success3")
-    }, 30)
-}
-
+/**
+ * @param {*} params 
+ * respHandler is function for final response handling (optional)
+ */
 function respHandler(params){
     if(params.demo == 100){
         console.log("respHandler", params)
@@ -51,6 +45,12 @@ function respHandler(params){
     }
 }
 
-unhell.use({value:10}, name, checkName, check2Name, check3Name, respHandler)
+/**
+ * execute unhell.use with first argument as function input values or can be json input
+ */
+
+ let params = {value:10} // supports string, int, json .. all type
+
+unhell.use(params, name, checkName, respHandler)
 
 ```
