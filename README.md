@@ -53,4 +53,18 @@ function respHandler(params){
 
 unhell.use(params, name, checkName, respHandler)
 
+
+/**
+ * @param {*} params 
+ * respHandler is function for final response handling (optional)
+ * function(err, success){} - callback function for final output
+ */
+function respHandlerLast(params, function(err, success){
+    if(err) throw new Error(err);
+    else console.log(success)
+})
+
+
+unhell.useLast(params, name, checkName, respHandlerLast)
+
 ```
