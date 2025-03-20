@@ -41,4 +41,5 @@ function respHandler(params){
     }
 }
 
+// single line execution as express middleware
 unhell.use({value:10}, name, checkName, check2Name, check3Name, respHandler)
